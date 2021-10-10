@@ -1,0 +1,148 @@
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+
+
+import random
+
+
+hashtag_list = [
+    " #memes4ever ",
+    " #indiamemes ",
+    " #sarcasticmemes ",
+    " #pkmkb ",
+    " #rcb ",
+    " #memenation ",
+    " #instfood ",
+    " #round2hell ",
+    " #ashishchanchlani ",
+    " #broadwaymemes ",
+    " #theepicbro ",
+    " #instareels ",
+    " #inspirationalquotes ",
+    " #carryminatimemes ",
+    " #india ",
+    " #dankmemes ",
+    " #couplegoals ",
+    " #belikebro ",
+    " #ghantastic ",
+    " #instagram ",
+    " #indianmemes ",
+    " #bakchod ",
+    " #sarcasam ",
+    " #hindimemes ",
+    " #photo ",
+    " #naughtymemes ",
+    " #heavydriver ",
+    " #allindiabakchod ",
+    " #totalchutzpaa ",
+    " #mumbaiindians ",
+    " #trolls_official ",
+    " #desimemes ",
+    " #couplememes ",
+    " #style ",
+    " #sakhtlaunda ",
+    " #bakchod_nation ",
+    " #ambulance ",
+    " #writer ",
+    " #nonvegjokes ",
+    " #viral ",
+    " #ipl ",
+    " #fuddu_sperm ",
+    " #dekhbhai ",
+    " #pagalpanti ",
+    " #naughtyworld ",
+    " #harami ",
+    " #yourself ",
+    " #girl ",
+    " #model ",
+    " #bollywoodmemems ",
+    " #meme ",
+    " #studentslife ",
+    " #thugschoollife ",
+    " #fashion ",
+    " #sarcasmicguy ",
+    " #love ",
+    " #carryminatifan ",
+    " #error69 ",
+    " #sarcasmonly ",
+    " #sunnobc ",
+    " #atmanirbhar ",
+    " #marvel ",
+    " #adultgram ",
+    " #influencer ",
+    " #bhuvanbam ",
+    " #sarcastic ",
+    " #hasleyindia ",
+    " #funnyjokes ",
+    " #dc ",
+    " #following ",
+    " #jeejaji ",
+    " #memelife ",
+    " #music ",
+    " #peakyblinders ",
+    " #instamemesdaily ",
+    " #memes_jokes ",
+    " #adultjokes ",
+    " #hindustanibhaumeme ",
+    " #r2h ",
+    " #indianjokes ",
+    " #offensivememes ",
+    " #likeback ",
+    " #logkyakahenge ",
+    " #trending ",
+    " #memesindia ",
+    " #photoshoot ",
+    " #lastbenchers ",
+    " #videomeme ",
+    " #fyp ",
+    " #memes ",
+    " #lifestyle ",
+    " #jokelikebro ",
+    " #_jokes ",
+    " #bcbaba ",
+    " #bbkivines ",
+    " #instagood ",
+    " #taimuralikhan ",
+    " #indianwebseries ",
+    " #liker ",
+    " #aib ",
+    " #allindiabackchod ",
+    " #beauty ",
+    " #backbenchers ",
+    " #indiansarcasm ",
+    " #nature ",
+    " #tesla ",
+    " #harshbeniwal ",
+    " #bollywoodactress ",
+    " #reelit ",
+]
+
+Important = [
+    " #couplegoals ",
+    " #broadwaymemes ",
+    " #naughtyworld ",
+    " #love ",
+    " #round2hell ",
+    " #sakhtlaunda ",
+    " #nonvegjokes ",
+    " #music ",
+    " #indianjokes ",
+    " #memes4ever ",
+    " #pkmkb ",
+]
+
+
+def addDescription(d, wait):
+
+    textArea = wait.until(
+        EC.element_to_be_clickable((By.XPATH, "//*[starts-with(@class,'_1mf _1mj')]"))
+    )
+    textArea.click()
+    subset = random.sample(hashtag_list, (30 - len(Important)))
+    hashtags = subset + Important
+    hastagstr = " ".join([str(elem) for elem in hashtags])
+    for item in range(random.randrange(3, 14)):
+        textArea.send_keys(" \n .")
+
+    textArea.send_keys(hastagstr)
